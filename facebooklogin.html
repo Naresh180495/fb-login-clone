@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fb-login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
     <style>
            *{
                margin: 0;
@@ -20,6 +21,7 @@
            }
            :root{
                   --greenbutton:#42b72a;
+                  /* --greenbutton:#30941c; */
                   --bluebutton:#1877f2;
                   --greybg:#f0f2f5;
            }
@@ -31,18 +33,18 @@
                      gap:50px;
                      justify-content: center;
                      align-items:center;
-/*                      border:1px solid red; */
+                     /* border:1px solid red; */
 
            }
            main .sec1{
-/*              border:1px solid red; */
+             /* border:1px solid red; */
              width:34%;
          
            }
            main .sec1 > img{
             width:300px;
             height:70px;
-/*             border:1px solid red; */
+            /* border:1px solid red; */
             object-fit:cover;
         
            }
@@ -52,7 +54,7 @@
 
            main > .sec2{    
        
-/*             border:1px solid red; */
+            /* border:1px solid red; */
             min-width:350px;
             min-height:310px;
             display: flex;
@@ -73,7 +75,7 @@
             align-items: center;
             gap:14px;
             width:100%;
-            padding:15px;
+            padding:16.5px; 
          
         }
         form div{
@@ -82,6 +84,20 @@
             width:100%;
             height:50px;
             text-align: center;
+        }
+        /* form div:nth-last-of-type(2){
+        } */
+        form div:nth-last-of-type(2) > span.eye{
+            /* border:1px solid red; */
+
+            display: block   ;
+            transform: translateY(-30px) translateX(150px);
+
+            cursor: pointer;
+        }
+        .fa-solid   {
+            color:black; 
+            opacity: 0;       
         }
 
         form input{
@@ -103,9 +119,15 @@
             opacity: 0.2;
         }
 
+        div.forgot-pass a {
+            text-decoration: none;
+            color: var(--bluebutton);
+            font-size: 14px;
+        }
+
         .btn-green{
             background-color: var(--greenbutton);  
-               opacity: 92%;
+               /* opacity: 92%; */
                color:white;
                font-weight: bold;
                font-size: 14px;
@@ -125,7 +147,8 @@
         }
 
         .btn-green:hover{
-            opacity: 100%;
+            /* opacity: 100%; */
+            background-color: #34a51e;;  
         }
         section.sec2 > div:nth-last-of-type(1){
             /* border:1px solid red; */
@@ -139,7 +162,7 @@
             font-weight: 600;
 
         }
-       @media (max-width:768px){
+        @media (max-width:768px){
             main {
                 flex-direction: column;
             }
@@ -167,6 +190,10 @@
             text-align: center;
      
         }
+        form div:nth-last-of-type(2) > span.eye{
+      
+            transform: translateY(-30px) translateX(120px);
+        }
         }
          
 
@@ -183,12 +210,15 @@
                 <section class="sec2">
                     <form action="#" method="post" target="_blank">
                         <div>
-                            <input type="email" class="input-email" name="email"
+                            <input type="email" name="email"
                             placeholder="Email address or phone number" autocomplete="off">
                         </div>
                         <div>
-                            <input type="password" class="input-pass" name="password"
+                            <input type="password" id="pass" name="password"
                             placeholder="Password" autocomplete="off">
+                            <span class="eye">
+                                <i class="fa-solid fa-eye-slash" id="eyebtn"></i>
+                            </span>
                         </div>
         
                          <input type="submit" class="btn-login" value="Log In"/>
@@ -205,6 +235,32 @@
         
     </main>
 
+    <script>
+        let pass = document.getElementById("pass");
+        let eyebtn = document.getElementById("eyebtn");
+ 
 
+        eyebtn.onclick = function (){
+           if(pass.type === "password"){
+               pass.type = "text";
+               this.setAttribute('class','fa-solid fa-eye')
+           }
+           else{
+               pass.type = "password";
+               this.setAttribute('class','fa-solid fa-eye-slash')
+           }
+        }
+
+        pass.oninput = function (){
+            if(pass.value.length >=1){
+                eyebtn.style.opacity = "0.3";
+            }
+            else{
+                eyebtn.style.opacity = "0";
+
+            }
+        }
+
+</script>
 </body>
 </html>
