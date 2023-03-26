@@ -15,176 +15,170 @@
            *,*::before,*::after{
                box-sizing: inherit;
            }
+           body{
+            background-color: white;
+           }
            :root{
                   --greenbutton:#42b72a;
                   --bluebutton:#1877f2;
                   --greybg:#f0f2f5;
            }
+
            main{
-            background-color: var(--greybg);
-            width: 100%;
-            min-height: 100vh;
-               border:1px solid red;
+                     background-color: var(--greybg);
+                     min-height:100vh;
+                     display:flex;
+                     gap:50px;
+                     justify-content: center;
+                     align-items:center;
+                     border:1px solid red;
+
+           }
+           main .sec1{
+             border:1px solid red;
+             width:34%;
          
            }
-        main > section{
-            height:inherit;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-        }
-      
-           div#sec1{
-               /* border:1px solid red; */
-               max-width: 480px;
-               max-height: 500px;
-               display: inline-block;
-               padding-bottom: 50px;
-               /* border: 5px solid red; */
-               position: relative;
-               bottom: 140px;
-               left:60px;
-               font-size: 16px;
-               margin-left: 50px;
-
-           }
-           div#sec1 img{
-               width:260px;
-               height:auto;
-               /* border:1px solid red; */
-               margin-left: 20px;
-
-           }
-           div#sec1 h2{ 
-               font-weight: normal;
-               margin-left: 40px;
-               font-size: 1.6em;
-           }
-       
-           div#sec2{
-               /* border:1px solid red; */
-               max-width: 450px;
-               display: inline-block;
-               margin-left:200px;
-               margin-top: 100px;
-               
-           }
-
-           div.form-div{
-               background-color: white;
-               box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-               border-radius: 8px;
-               text-align: center;
-               padding: 15px 10px 15px;
-           }
-
-           .form-div [type]{
-               padding: 10px;
-               width: 360px;
-               margin: 10px 10px;
-               border-radius: 6px;
-               border-color:rgb(0 0 0 / 10%);
-               font-size: 18px;
-           }
+           main .sec1 > img{
+            width:300px;
+            height:70px;
+            border:1px solid red;
+            object-fit:cover;
         
-           .form-div [type="submit"] {
-              
-               background-color: var(--bluebutton);
+           }
+           main .sec1 > h2{
+            font-weight: normal;
+           }
+
+           main > .sec2{    
+       
+            border:1px solid red;
+            min-width:350px;
+            min-height:310px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+           
+           
+        }
+        
+        section form{
+            border-radius: 8px;
+            /* border:1px solid red; */
+            box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:14px;
+            width:100%;
+            padding:15px;
+         
+        }
+        form div{
+       
+            /* border:1px solid black; */
+            width:100%;
+            height:50px;
+            text-align: center;
+        }
+
+        form input{
+            
+            width:90%;
+          
+            padding:14px;
+            border-radius:8px;
+            border:1px solid rgb(0 0 0 / 10%);
+            
+           outline-width: 0.1px;
+        }
+        input::placeholder{
+            opacity:0.3;
+        }
+        form hr{
+            width:100%;
+            height:0.01px;
+            opacity: 0.2;
+        }
+
+        .btn-green{
+            background-color: var(--greenbutton);  
+               opacity: 92%;
+               color:white;
+               font-weight: bold;
+               font-size: 14px;
+               border-radius: 6px;
+               width:160px;
+               border:none;
+               text-align: center;
+        }
+        .btn-login{
+            background-color: var(--bluebutton);
                opacity: 90%;
                color:white;
                font-weight: bold;
                font-size: 18px;
                border-radius: 6px;
                border:none;
-           }
-           .form-div button.cr-new-acc{
-               background-color: var(--greenbutton);  
-               opacity: 92%;
-               color:white;
-               font-weight: bold;
-               font-size: 18px;
-               border-radius: 6px;
-               width:200px;
-               border:none;
-           }
+        }
 
-        button.fade:hover{
+        .btn-green:hover{
             opacity: 100%;
         }
-           div.forgot-pass a{
-               font-size: 14px;
-               text-decoration:none;
-           }
-
-           div.forgot-pass a:hover{
-               text-decoration: underline;
-           }
-
-           .hr-line{
-               width:95%;
-               margin-top:20px;
-               margin-bottom: 10px;
-               opacity: 40%;
-           }
-           div.sec2-bot-div{
-                            margin: 20px 0px;
-                            text-align: center;
-           }
-           a.cr-page{
-            color: black;
-            font-size: 14px;
-            font-weight: bold;
+        section.sec2 > div:nth-last-of-type(1){
+            /* border:1px solid red; */
+            width:96%;
+            font-size:13.2px;
+            padding:22px 0  ;
+        }
+        section.sec2 > div:nth-last-of-type(1) a{
             text-decoration: none;
-           }
-           a.cr-page:hover{
-               text-decoration: underline;
+            color:rgb(0, 0, 0);
+            font-weight: 600;
 
+        }
+        @media (max-width:768px){
+            main {
+                flex-direction: column;
+            }
+            main .sec1{
+            
+             width:80%;
+          
            }
-           .foot-div1 ul li button.plus{
-                width: 35px;
-                height:19px;
-                font-size: 16px;
-                
-                /* font-weight: bold; */
+           main .sec1 > img{
+            width:80%;
+            height:70px;
+ 
+            object-fit:contain;
+        
            }
-           div.foot-div1 ul li {
-               /* border:1px solid red; */
-               float:left;
-               list-style-type: none;
-               margin-left:20px;
-               font-size: 12px;
-           }
-
-          ul li a:link{
-            cursor: pointer;
-            text-decoration: none;
-            color: rgba(0 0 0 / 60%);
-          }
-          div.foot-div1 ul li a:hover {
-                text-decoration: underline;
-          }
-          section{
-              height: 120px;
-          }
-           section > div{
-               width:1000px;
-               /* border:1px solid red; */
-               margin:20px auto;
-           }
+           section form{
+            width:78%;
+        }
+        section.sec2 > div:nth-last-of-type(1){
+          
+            width:80%;
+            font-size:10.2px;
+            text-align: center;
+     
+        }
+        }
+         
 
     </style>
 </head>
 <body>
     <main>
-        <seciton >
+                <section class="sec1">
+                    <img src="Fblogo.png" class="fb-logo">
+                    <h2>Facebook helps you connect and share with the people in your life.</h2>
+                </section>
+            
 
-                <div id="sec1">
-                   <img src="facebook.svg" class="fb-logo">
-                   <h2>Facebook helps you connect and share with the people in your life.</h2>
-                </div>   
-
-                <div id="sec2" class="form">
-                    <div class="form-div">
+                <section class="sec2">
                     <form action="#" method="post" target="_blank">
                         <div>
                             <input type="email" class="input-email" name="email"
@@ -195,45 +189,20 @@
                             placeholder="Password" autocomplete="off">
                         </div>
         
-                         <button type="submit" class="fade">Log In</button>
+                         <input type="submit" class="btn-login" value="Log In"/>
                          <div class="forgot-pass"><a href="#">Forgotten password?</a></div>
-                         <hr class="hr-line">
-                         <button type="submit" class="cr-new-acc fade">Create New Account</button>
+                         <hr>
+                         <input type="button" class="btn-green" value="Create New Account"/>
                       </form>
-                    </div>
+                    
 
-                      <div class="sec2-bot-div"><a href="#" class="cr-page">Create a Page</a> for a celebrity, brand or business.</div>
-                </div>
+                      <div><a href="#" >Create a Page</a> for a celebrity, brand or business.</div>
+                </section>
 
         </section>
         
     </main>
 
-    <footer>
-        <section>
-        <div class="foot-div1">
-            <ul>
-                <li><span>English (UK)</span></li>
-                <li><a href="#" title="Marathi"> मराठी </a></li>
-                <li><a href="#" title="Hindi"> हिन्दी </a></li>
-                <li><a href="#" title="Urdu"> اردو </a></li>
-                <li><a href="#" title="Gujrati"> ગુજરાતી </a></li>
-                <li><a href="#" title="Kannada"> ಕನ್ನಡ </a></li>
-                <li><a href="#" title="Punjabi"> ਪੰਜਾਬੀ </a></li>
-                <li><a href="#" title="Tamil"> தமிழ் </a></li>
-                <li><a href="#" title="Bengali">  বাংলা </a></li>
-                <li><a href="#" title="Telugu">తెలుగు </a></li>
-                <li><a href="#" title="Malayalam"> മലയാളം </a></li>
-                <li>
-                    <button type="submit" class="plus" title="Show more languages">+</button>
-                </li>
-            </ul>
-        </div>
-        <div class="foot-div2">
-          __________________________________________________________________________________________________________________________________________________________
-        </div>
-        <div class="foot-div3"></div>
-    </section>
-    </footer>
+
 </body>
 </html>
